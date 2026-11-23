@@ -1,0 +1,10 @@
+FOTOGRAFÍAS OPCIONALES
+======================
+Si desea usar fotografías reales en la página principal, coloque aquí
+(con estos nombres exactos) imágenes JPG libres de derechos, por ejemplo
+de Pexels o Unsplash:
+
+  hero.jpg     -> foto principal (dermatóloga examinando la piel), 1200x960 aprox.
+  clinica.jpg  -> foto del consultorio / sala de procedimientos, 1200x990 aprox.
+
+Si no existen, el sitio muestra automáticamente las ilustraciones SVG propias.

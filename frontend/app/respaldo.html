@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respaldo de Base de Datos | DermaVida</title>
+    <link rel="icon" href="../img/logo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-pagina="respaldo" data-titulo="Respaldo de Base de Datos" data-roles="Administrador">
+<main>
+    <div class="page-head">
+        <div><h2>💾 Respaldo y Restauración</h2><p>Genere una copia completa de la base de datos PostgreSQL (estructura + datos) en un archivo .sql.</p></div>
+    </div>
+    <div class="grid-2">
+        <div class="card surface">
+            <div class="card-head"><h3>📦 Descargar respaldo</h3></div>
+            <p class="muted">El archivo incluye la creación de las 7 tablas, todos los registros y el ajuste de las secuencias. Puede restaurarse desde este módulo o con <code>psql</code> / pgAdmin.</p>
+            <div class="resumen-grid" id="infoBD"></div>
+            <div class="table-wrap" style="margin-bottom:16px"><table class="table" id="tablaConteo"><thead><tr><th>Tabla</th><th class="text-right">Registros</th></tr></thead><tbody></tbody></table></div>
+            <button class="btn btn-primary btn-block" id="btnRespaldo" style="padding:13px">⬇️ Descargar respaldo (.sql)</button>
+        </div>
+        <div class="card">
+            <div class="card-head"><h3>♻️ Restaurar desde archivo</h3></div>
+            <div class="alert alert-error">⚠️ La restauración <b>reemplaza todos los datos actuales</b> por los del archivo. Se ejecuta dentro de una transacción: si el archivo tiene errores no se modifica nada.</div>
+            <div class="field" style="margin-bottom:14px"><label for="archivoSQL">Archivo de respaldo (.sql)</label>
+                <input class="input" type="file" id="archivoSQL" accept=".sql,text/plain"></div>
+            <div class="field" style="margin-bottom:14px"><label for="confirmacion">Escriba <b>RESTAURAR</b> para confirmar</label>
+                <input class="input" id="confirmacion" placeholder="RESTAURAR" autocomplete="off"></div>
+            <button class="btn btn-danger btn-block" id="btnRestaurar" disabled>♻️ Restaurar base de datos</button>
+            <p class="hint" style="margin-top:12px">Recomendación: descargue un respaldo actual antes de restaurar.</p>
+        </div>
+    </div>
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/respaldo.js"></script>
+</body>
+</html>

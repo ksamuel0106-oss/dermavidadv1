@@ -1,0 +1,11 @@
+{
+  "name": "clinica-dermatologica-dermavida",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema web Clínica Dermatológica DermaVida - Lab. Programación III UCATECI",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "init-db": "cd backend && npm run init-db",
+    "start": "cd backend && npm start"
+  }
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dermatológica DermaVida | La Vega</title>
+    <meta name="description" content="Clínica Dermatológica DermaVida en La Vega: dermatología clínica, estética, quirúrgica y pediátrica.">
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ===================== NAVEGACIÓN ===================== -->
+<nav class="site-nav">
+    <div class="container">
+        <a class="site-brand" href="#inicio">
+            <img src="img/logo.svg" alt="Logo DermaVida">
+            <div><strong>DermaVida</strong><small>Clínica Dermatológica</small></div>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+        <div class="site-links" id="siteLinks">
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#especialistas">Especialistas</a>
+            <a href="#prevencion">Prevención</a>
+            <a href="#contacto">Contacto</a>
+            <a class="btn btn-primary" href="login.html">🔐 Acceso al sistema</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="inicio">
+    <div class="container">
+        <div>
+            <span class="eyebrow">🌿 Dermatología clínica, estética y quirúrgica</span>
+            <h1>Cuidamos la salud de <em>tu piel</em> en cada etapa de la vida.</h1>
+            <p class="lead">En DermaVida combinamos especialistas certificados, tecnología de diagnóstico y un trato cercano para tratar acné, manchas, lunares, alergias y mucho más.</p>
+            <div class="cta">
+                <a class="btn btn-primary" href="#contacto">📅 Agenda tu cita</a>
+                <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+            </div>
+        </div>
+        <div class="hero-figure">
+            <div class="foto" style="background-image:url('img/fotos/hero.jpg'), url('img/piel.svg')" role="img" aria-label="Ilustración de las capas de la piel y examen con dermatoscopio"></div>
+            <div class="float f1"><span class="ico">🩺</span><div><b id="statConsultas">+180</b>consultas realizadas</div></div>
+            <div class="float f2"><span class="ico">⭐</span><div><b>4.9 / 5</b>satisfacción</div></div>
+        </div>
+    </div>
+</header>
+
+<section class="stats-band">
+    <div class="container">
+        <div><b id="statPacientes">—</b><span>Pacientes atendidos</span></div>
+        <div><b id="statEspecialistas">—</b><span>Dermatólogos especialistas</span></div>
+        <div><b id="statServicios">—</b><span>Servicios disponibles</span></div>
+        <div><b>6 días</b><span>de atención a la semana</span></div>
+    </div>
+</section>
+
+<!-- ===================== SERVICIOS (desde la BD) ===================== -->
+<section class="section" id="servicios">
+    <div class="container">
+        <div class="section-head">
+            <h2>Nuestros servicios</h2>
+            <p>Precios de referencia actualizados desde nuestro sistema. Muchos servicios clínicos y diagnósticos tienen cobertura de su ARS.</p>
+        </div>
+        <div class="tabs" id="tabsCategorias">
+            <button class="tab on" data-cat="">Todos</button>
+            <button class="tab" data-cat="Clínica">🩺 Clínica</button>
+            <button class="tab" data-cat="Diagnóstica">🔍 Diagnóstica</button>
+            <button class="tab" data-cat="Quirúrgica">✂️ Quirúrgica</button>
+            <button class="tab" data-cat="Estética">✨ Estética</button>
+        </div>
+        <div class="services" id="listaServicios"><div class="empty"><span class="loader"></span></div></div>
+    </div>
+</section>
+
+<!-- ===================== NOSOTROS ===================== -->
+<section class="section alt" id="nosotros">
+    <div class="container about">
+        <div class="foto" style="background-image:url('img/fotos/clinica.jpg'), url('img/clinica.svg')" role="img" aria-label="Consultorio de dermatología"></div>
+        <div>
+            <span class="eyebrow">Sobre DermaVida</span>
+            <h2 style="font-size:32px">Una clínica pensada para tu piel y tu tranquilidad</h2>
+            <p class="muted">Desde La Vega atendemos a pacientes de toda la región del Cibao. Nuestro equipo trabaja con protocolos basados en evidencia y lleva un expediente digital de cada paciente para dar seguimiento real a su tratamiento.</p>
+            <div class="features">
+                <div class="feature"><span class="ico">🔬</span><div><strong>Dermatoscopia digital</strong><small>Mapeo de lunares para detección temprana del melanoma.</small></div></div>
+                <div class="feature"><span class="ico">📁</span><div><strong>Expediente electrónico</strong><small>Historial, diagnósticos y recetas siempre disponibles.</small></div></div>
+                <div class="feature"><span class="ico">🛡️</span><div><strong>Aceptamos seguros</strong><small>ARS Humano, Universal, SENASA, Mapfre y Palic.</small></div></div>
+                <div class="feature"><span class="ico">👶</span><div><strong>Dermatología pediátrica</strong><small>Atención especializada para niños y adolescentes.</small></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== ESPECIALISTAS (desde la BD) ===================== -->
+<section class="section" id="especialistas">
+    <div class="container">
+        <div class="section-head">
+            <h2>Nuestros especialistas</h2>
+            <p>Dermatólogos con exequátur vigente y formación en distintas subespecialidades.</p>
+        </div>
+        <div class="team" id="listaDoctores"></div>
+    </div>
+</section>
+
+<!-- ===================== PREVENCIÓN ABCDE ===================== -->
+<section class="section alt" id="prevencion">
+    <div class="container">
+        <div class="section-head">
+            <h2>Revisa tus lunares: la regla ABCDE</h2>
+            <p>El melanoma detectado a tiempo tiene muy buen pronóstico. Si un lunar presenta alguna de estas señales, agenda una evaluación.</p>
+        </div>
+        <div class="abcde">
+            <div class="letra"><img src="img/abcde-a.svg" alt=""><b>A</b><strong>Asimetría</strong><small>Una mitad no coincide con la otra.</small></div>
+            <div class="letra"><img src="img/abcde-b.svg" alt=""><b>B</b><strong>Bordes</strong><small>Irregulares, dentados o mal definidos.</small></div>
+            <div class="letra"><img src="img/abcde-c.svg" alt=""><b>C</b><strong>Color</strong><small>Varios tonos: marrón, negro, rojo o azul.</small></div>
+            <div class="letra"><img src="img/abcde-d.svg" alt=""><b>D</b><strong>Diámetro</strong><small>Mayor de 6 mm (tamaño de un borrador).</small></div>
+            <div class="letra"><img src="img/abcde-e.svg" alt=""><b>E</b><strong>Evolución</strong><small>Cambia de tamaño, forma o color.</small></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== CONTACTO ===================== -->
+<section class="section" id="contacto">
+    <div class="container contact">
+        <div class="contact-card">
+            <h3>Agenda tu cita</h3>
+            <p>Llámanos o escríbenos por WhatsApp y nuestra recepción te asignará el primer horario disponible con el especialista que necesites.</p>
+            <ul>
+                <li><span>📞</span><div><b>809-573-2200</b><br><small>Recepción y citas</small></div></li>
+                <li><span>💬</span><div><b>829-555-0199</b><br><small>WhatsApp</small></div></li>
+                <li><span>📍</span><div><b>Av. Pedro A. Rivera #32</b><br><small>La Vega, República Dominicana</small></div></li>
+                <li><span>✉️</span><div><b>info@dermavida.do</b><br><small>Correo electrónico</small></div></li>
+            </ul>
+        </div>
+        <div class="horarios">
+            <h3>Horario de atención</h3>
+            <p class="muted">Las citas se programan según el horario de cada especialista.</p>
+            <table>
+                <tr><td>Lunes a viernes</td><td>8:00 AM – 5:00 PM</td></tr>
+                <tr><td>Sábados</td><td>8:00 AM – 5:00 PM</td></tr>
+                <tr><td>Domingos y feriados</td><td style="color:var(--danger-hover)">Cerrado</td></tr>
+            </table>
+            <p class="small muted" style="margin-top:16px">💡 Llega 10 minutos antes de tu cita con tu cédula y carnet del seguro. Evita aplicarte maquillaje o cremas si vienes a una evaluación de piel.</p>
+            <a class="btn btn-primary" href="tel:8095732200">📞 Llamar ahora</a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div>© 2026 Clínica Dermatológica DermaVida • Proyecto final de Laboratorio de Programación III — UCATECI</div>
+        <div><a href="login.html">Acceso para personal</a></div>
+    </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script>
+    const IMG_CAT = { "Clínica": "img/cat-clinica.svg", "Diagnóstica": "img/cat-diagnostica.svg", "Quirúrgica": "img/cat-quirurgica.svg", "Estética": "img/cat-estetica.svg" };
+    const FOTOS_F = ["img/doctora-1.svg", "img/doctora-2.svg", "img/doctora-3.svg"];
+    const FOTOS_M = ["img/doctor-1.svg", "img/doctor-2.svg"];
+    const esDoctora = (d) => /a$/i.test(d.nombre.split(" ")[0]);
+    let servicios = [];
+
+    document.getElementById("navToggle").onclick = () => document.getElementById("siteLinks").classList.toggle("open");
+    document.querySelectorAll("#siteLinks a").forEach((a) => a.addEventListener("click", () => document.getElementById("siteLinks").classList.remove("open")));
+
+    function pintarServicios(cat = "") {
+        const lista = servicios.filter((s) => !cat || s.categoria === cat);
+        document.getElementById("listaServicios").innerHTML = lista.map((s) => `
+            <article class="service">
+                <div class="img" style="background-image:url('${IMG_CAT[s.categoria]}')"></div>
+                <div class="body">
+                    <span class="chip" style="align-self:flex-start">${esc(s.categoria)}</span>
+                    <h3>${esc(s.nombre)}</h3>
+                    <p>${esc(s.descripcion || "")}</p>
+                    <div class="meta"><span class="muted">⏱ ${s.duracion_min} min</span><span class="precio">${fmt.dinero(s.precio)}</span></div>
+                </div>
+            </article>`).join("");
+    }
+
+    document.querySelectorAll("#tabsCategorias .tab").forEach((t) => t.onclick = () => {
+        document.querySelectorAll("#tabsCategorias .tab").forEach((x) => x.classList.remove("on"));
+        t.classList.add("on");
+        pintarServicios(t.dataset.cat);
+    });
+
+    async function cargar() {
+        try {
+            const [srv, docs, est] = await Promise.all([api("/publico/servicios"), api("/publico/dermatologos"), api("/publico/estadisticas")]);
+            servicios = srv;
+            pintarServicios();
+            let nf = 0, nm = 0;
+            document.getElementById("listaDoctores").innerHTML = docs.map((d) => `
+                <div class="doctor">
+                    <div class="foto" style="background-image:url('${esDoctora(d) ? FOTOS_F[nf++ % 3] : FOTOS_M[nm++ % 2]}')"></div>
+                    <strong>${esDoctora(d) ? "Dra." : "Dr."} ${esc(d.nombre)} ${esc(d.apellido)}</strong>
+                    <small>${esc(d.especialidad)}</small>
+                    <div class="horario">🕘 ${d.desde} – ${d.hasta}</div>
+                </div>`).join("");
+            document.getElementById("statPacientes").textContent = est.pacientes;
+            document.getElementById("statEspecialistas").textContent = est.especialistas;
+            document.getElementById("statServicios").textContent = est.servicios;
+            document.getElementById("statConsultas").textContent = "+" + est.consultas;
+        } catch (e) {
+            document.getElementById("listaServicios").innerHTML = `<div class="empty">⚠️ ${esc(e.message)}</div>`;
+        }
+    }
+    cargar();
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Citas | DermaVida</title>
+    <link rel="icon" href="../img/logo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-pagina="citas" data-titulo="Agenda de Citas" data-roles="Administrador,Recepción,Dermatólogo">
+<main>
+    <div class="page-head">
+        <div><h2>📅 Agenda de Citas</h2><p>Proceso de agendamiento con validación de horario y disponibilidad del dermatólogo.</p></div>
+        <div class="toolbar"><button class="btn btn-primary" id="btnNuevo">➕ Agendar cita</button></div>
+    </div>
+    <div class="card">
+        <div class="filters" style="margin-bottom:14px">
+            <div class="field grow"><label for="buscar">Paciente</label>
+                <div class="input-icon"><span>🔍</span><input class="input" id="buscar" placeholder="Nombre o cédula..."></div></div>
+            <div class="field"><label for="fDesde">Desde</label><input class="input" type="date" id="fDesde"></div>
+            <div class="field"><label for="fHasta">Hasta</label><input class="input" type="date" id="fHasta"></div>
+            <div class="field"><label for="fEstado">Estado</label><select class="input" id="fEstado"><option value="">Todos</option><option>Pendiente</option><option>Confirmada</option><option>Atendida</option><option>Cancelada</option></select></div>
+            <div class="field"><label for="fDerm">Dermatólogo</label><select class="input" id="fDerm"><option value="">Todos</option></select></div>
+            <div class="field"><label>&nbsp;</label><div style="display:flex;gap:6px">
+                <button class="btn btn-light btn-sm" data-rango="hoy" style="padding:10px">Hoy</button>
+                <button class="btn btn-light btn-sm" data-rango="semana" style="padding:10px">7 días</button>
+                <button class="btn btn-light btn-sm" data-rango="todo" style="padding:10px">Todo</button></div></div>
+        </div>
+        <div class="table-wrap"><table class="table responsive" id="tabla"><thead></thead><tbody></tbody></table></div>
+        <div class="table-info" id="infoTabla"></div>
+    </div>
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/crud.js"></script>
+<script src="../js/citas.js"></script>
+</body>
+</html>

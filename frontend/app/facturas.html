@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturación | DermaVida</title>
+    <link rel="icon" href="../img/logo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-pagina="facturas" data-titulo="Facturación" data-roles="Administrador,Recepción">
+<main>
+    <div class="page-head">
+        <div><h2>🧾 Facturación</h2><p>Facturas generadas por el proceso de atención. Descargue el PDF o anule si es necesario.</p></div>
+    </div>
+    <div class="resumen-grid" id="resumenFacturas"></div>
+    <div class="card">
+        <div class="filters" style="margin-bottom:14px">
+            <div class="field grow"><label for="buscar">Buscar</label>
+                <div class="input-icon"><span>🔍</span><input class="input" id="buscar" placeholder="No. factura o paciente..."></div></div>
+            <div class="field"><label for="fDesde">Desde</label><input class="input" type="date" id="fDesde"></div>
+            <div class="field"><label for="fHasta">Hasta</label><input class="input" type="date" id="fHasta"></div>
+            <div class="field"><label for="fMetodo">Método</label><select class="input" id="fMetodo"><option value="">Todos</option><option>Efectivo</option><option>Tarjeta</option><option>Transferencia</option><option>Seguro</option></select></div>
+            <div class="field"><label for="fEstado">Estado</label><select class="input" id="fEstado"><option value="">Todos</option><option>Pagada</option><option>Anulada</option></select></div>
+        </div>
+        <div class="table-wrap"><table class="table responsive" id="tabla"><thead></thead><tbody></tbody></table></div>
+        <div class="table-info" id="infoTabla"></div>
+    </div>
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/crud.js"></script>
+<script src="../js/facturas.js"></script>
+</body>
+</html>

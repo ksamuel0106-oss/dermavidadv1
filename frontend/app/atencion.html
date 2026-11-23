@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atención y Cobro | DermaVida</title>
+    <link rel="icon" href="../img/logo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-pagina="atencion" data-titulo="Atención y Cobro" data-roles="Administrador,Dermatólogo">
+<main>
+    <div class="page-head">
+        <div><h2>🩺 Atención Dermatológica y Facturación</h2><p>Seleccione una cita, registre el diagnóstico y el sistema genera la factura automáticamente.</p></div>
+    </div>
+    <div class="steps">
+        <span class="step on" id="paso1"><b>1</b>Seleccionar cita</span>
+        <span class="step" id="paso2"><b>2</b>Registrar consulta</span>
+        <span class="step" id="paso3"><b>3</b>Cobrar y facturar</span>
+    </div>
+    <div class="grid-side">
+        <div class="card surface">
+            <div class="card-head"><h3>⏳ Pacientes por atender</h3><span class="chip" id="totalPendientes">0</span></div>
+            <div class="cita-list" id="listaPendientes"><div class="empty"><span class="loader"></span></div></div>
+        </div>
+        <div class="card" id="panelAtencion">
+            <div class="empty" style="padding:70px 10px"><span class="big">👈</span>Seleccione una cita de la lista para iniciar la atención.</div>
+        </div>
+    </div>
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/atencion.js"></script>
+</body>
+</html>

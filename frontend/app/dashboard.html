@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | DermaVida</title>
+    <link rel="icon" href="../img/logo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-pagina="dashboard" data-titulo="Dashboard General">
+<main>
+    <section class="welcome">
+        <div>
+            <h2 id="saludo">¡Bienvenido(a)!</h2>
+            <p id="fechaHoy">Resumen actualizado de la jornada, citas del día y tareas pendientes de la clínica.</p>
+        </div>
+        <img src="../img/bienvenida.svg" alt="">
+    </section>
+
+    <section class="kpis" id="kpis">
+        <div class="kpi"><div class="top"><span class="ico">👥</span>Total Pacientes</div><div class="valor">—</div><div class="sub">&nbsp;</div></div>
+        <div class="kpi"><div class="top"><span class="ico">📅</span>Citas Hoy</div><div class="valor">—</div><div class="sub">&nbsp;</div></div>
+        <div class="kpi"><div class="top"><span class="ico">🩺</span>Atendidas este mes</div><div class="valor">—</div><div class="sub">&nbsp;</div></div>
+        <div class="kpi"><div class="top"><span class="ico">💵</span>Ingresos del mes</div><div class="valor">—</div><div class="sub">&nbsp;</div></div>
+    </section>
+
+    <section class="grid-2">
+        <div class="stack">
+            <div class="card surface">
+                <div class="card-head"><h3>⚡ Módulos de Acción Rápida</h3></div>
+                <div class="quick" id="accesos"></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>💹 Ingresos de los últimos 6 meses</h3><span class="chip">Facturas pagadas</span></div>
+                <div class="bars" id="graficoIngresos"></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>🏆 Servicios más realizados</h3></div>
+                <div class="hbars" id="topServicios"></div>
+            </div>
+        </div>
+        <div class="stack">
+            <div class="card surface">
+                <div class="card-head"><h3>📋 Citas de hoy</h3><a class="btn btn-sm btn-light" href="citas.html">Ver agenda →</a></div>
+                <div class="agenda" id="citasHoy"><div class="empty"><span class="loader"></span></div></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>🗓️ Próximas citas</h3></div>
+                <div class="agenda" id="proximas"></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3>📌 Estado de citas (últimos 30 días)</h3></div>
+                <div class="hbars" id="porEstado"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

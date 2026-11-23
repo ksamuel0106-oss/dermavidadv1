@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios | DermaVida</title>
+    <link rel="icon" href="../img/logo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-pagina="usuarios" data-titulo="Usuarios" data-roles="Administrador">
+<main>
+    <div class="page-head">
+        <div><h2>🔐 Usuarios del Sistema</h2><p>Cuentas de acceso, roles y estado. Las contraseñas se guardan cifradas con bcrypt.</p></div>
+        <div class="toolbar"><button class="btn btn-primary" id="btnNuevo">➕ Nuevo usuario</button></div>
+    </div>
+    <div class="card">
+        <div class="filters" style="margin-bottom:14px">
+            <div class="field grow"><label for="buscar">Buscar</label>
+                <div class="input-icon"><span>🔍</span><input class="input" id="buscar" placeholder="Nombre o correo..."></div></div>
+            
+        </div>
+        <div class="table-wrap"><table class="table responsive" id="tabla"><thead></thead><tbody></tbody></table></div>
+        <div class="table-info" id="infoTabla"></div>
+    </div>
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/crud.js"></script>
+<script src="../js/usuarios.js"></script>
+</body>
+</html>

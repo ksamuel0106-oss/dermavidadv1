@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes | DermaVida</title>
+    <link rel="icon" href="../img/logo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-pagina="pacientes" data-titulo="Pacientes" data-roles="Administrador,Recepción,Dermatólogo">
+<main>
+    <div class="page-head">
+        <div><h2>👥 Registro de Pacientes</h2><p>Expediente general de cada paciente de la clínica.</p></div>
+        <div class="toolbar"><button class="btn btn-primary" id="btnNuevo">➕ Nuevo paciente</button></div>
+    </div>
+    <div class="card">
+        <div class="filters" style="margin-bottom:14px">
+            <div class="field grow"><label for="buscar">Buscar</label>
+                <div class="input-icon"><span>🔍</span><input class="input" id="buscar" placeholder="Nombre, cédula o teléfono..."></div></div>
+            
+        </div>
+        <div class="table-wrap"><table class="table responsive" id="tabla"><thead></thead><tbody></tbody></table></div>
+        <div class="table-info" id="infoTabla"></div>
+    </div>
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/crud.js"></script>
+<script src="../js/pacientes.js"></script>
+</body>
+</html>

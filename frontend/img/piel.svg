@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6EFEA"/><stop offset="1" stop-color="#CFE3D8"/></linearGradient>
+    <linearGradient id="epi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6D3BC"/><stop offset="1" stop-color="#EDB99A"/></linearGradient>
+    <linearGradient id="der" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3B4A6"/><stop offset="1" stop-color="#E99C8E"/></linearGradient>
+    <linearGradient id="hip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE6B3"/><stop offset="1" stop-color="#F5D78E"/></linearGradient>
+    <clipPath id="bloque"><path d="M70 150 Q300 120 530 150 L530 410 Q300 430 70 410Z"/></clipPath>
+    <clipPath id="lupa"><circle cx="452" cy="148" r="78"/></clipPath>
+  </defs>
+  <rect width="600" height="480" fill="url(#bg)"/>
+  <circle cx="90" cy="70" r="120" fill="#FFFFFF" opacity=".35"/>
+  <circle cx="560" cy="440" r="140" fill="#2D7D64" opacity=".08"/>
+  <!-- sombra -->
+  <ellipse cx="300" cy="428" rx="240" ry="18" fill="#1E2D27" opacity=".12"/>
+  <g clip-path="url(#bloque)">
+    <rect x="60" y="110" width="480" height="330" fill="url(#hip)"/>
+    <g fill="#FFF3CF" stroke="#E9C66E" stroke-width="2">
+      <circle cx="100" cy="370" r="22"/><circle cx="146" cy="384" r="20"/><circle cx="190" cy="368" r="23"/><circle cx="236" cy="386" r="21"/>
+      <circle cx="282" cy="370" r="22"/><circle cx="328" cy="388" r="20"/><circle cx="372" cy="370" r="23"/><circle cx="418" cy="386" r="21"/>
+      <circle cx="462" cy="370" r="22"/><circle cx="506" cy="386" r="20"/>
+    </g>
+    <path d="M60 175 Q300 145 540 175 L540 340 Q300 360 60 340Z" fill="url(#der)"/>
+    <path d="M60 150 Q300 120 540 150 L540 182 Q300 156 60 182Z" fill="url(#epi)"/>
+    <path d="M60 150 Q300 120 540 150" stroke="#E0A07C" stroke-width="3" fill="none"/>
+    <!-- papilas -->
+    <path d="M60 182 q20 14 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" fill="none" stroke="#D98E80" stroke-width="2.5"/>
+    <!-- vasos -->
+    <path d="M60 300 C150 280 200 320 300 296 S450 300 540 284" stroke="#C0392B" stroke-width="7" fill="none" stroke-linecap="round" opacity=".85"/>
+    <path d="M60 318 C160 300 220 336 310 316 S450 320 540 306" stroke="#3A6EA5" stroke-width="7" fill="none" stroke-linecap="round" opacity=".8"/>
+    <path d="M150 292 C150 260 170 230 165 200" stroke="#C0392B" stroke-width="3" fill="none"/>
+    <path d="M380 300 C385 260 360 230 372 196" stroke="#C0392B" stroke-width="3" fill="none"/>
+    <!-- folículos y pelos -->
+    <g>
+      <path d="M200 330 q-10 -70 4 -140" stroke="#B5765F" stroke-width="16" fill="none" stroke-linecap="round"/>
+      <path d="M204 196 q4 -60 -10 -110" stroke="#5B3A29" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="200" cy="334" rx="13" ry="10" fill="#8B4E3A"/>
+      <path d="M212 228 q22 4 26 22 q-18 6 -28 -8" fill="#F7E3A1" stroke="#D9B85E" stroke-width="2"/>
+      <path d="M430 334 q-12 -72 2 -148" stroke="#B5765F" stroke-width="16" fill="none" stroke-linecap="round"/>
+      <path d="M432 190 q-6 -60 14 -104" stroke="#5B3A29" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="430" cy="338" rx="13" ry="10" fill="#8B4E3A"/>
+    </g>
+    <!-- glándula sudorípara -->
+    <path d="M300 172 C298 210 304 240 300 270 c-14 6 -18 24 -2 30 c16 6 26 -16 10 -24 c-14 -6 -22 14 -8 20" stroke="#4FA185" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- melanocito / lunar -->
+    <ellipse cx="300" cy="148" rx="26" ry="8" fill="#6B4433"/>
+  </g>
+  <path d="M70 150 Q300 120 530 150 L530 410 Q300 430 70 410Z" fill="none" stroke="#FFFFFF" stroke-width="4" opacity=".7"/>
+  <!-- etiquetas -->
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#1E2D27">
+    <g><rect x="22" y="128" width="98" height="28" rx="14" fill="#FFFFFF"/><text x="71" y="147" text-anchor="middle">Epidermis</text></g>
+    <g><rect x="22" y="240" width="82" height="28" rx="14" fill="#FFFFFF"/><text x="63" y="259" text-anchor="middle">Dermis</text></g>
+    <g><rect x="22" y="362" width="112" height="28" rx="14" fill="#FFFFFF"/><text x="78" y="381" text-anchor="middle">Hipodermis</text></g>
+  </g>
+  <!-- dermatoscopio / lupa -->
+  <line x1="508" y1="206" x2="566" y2="270" stroke="#1E2D27" stroke-width="20" stroke-linecap="round"/>
+  <line x1="508" y1="206" x2="566" y2="270" stroke="#2D7D64" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="452" cy="148" r="86" fill="#FFFFFF"/>
+  <g clip-path="url(#lupa)">
+    <rect x="360" y="60" width="190" height="190" fill="#F2C7AC"/>
+    <g fill="#E7B293" opacity=".6"><circle cx="400" cy="100" r="3"/><circle cx="500" cy="210" r="3"/><circle cx="420" cy="210" r="2.5"/><circle cx="510" cy="96" r="2.5"/></g>
+    <path d="M404 128 q16 -28 50 -24 q34 6 40 36 q4 34 -30 46 q-40 10 -56 -18 q-10 -20 -4 -40z" fill="#8A5A45"/>
+    <path d="M420 136 q14 -16 34 -12 q22 6 24 26 q0 20 -20 26 q-24 6 -36 -12 q-6 -14 -2 -28z" fill="#6B4433"/>
+    <circle cx="448" cy="150" r="9" fill="#4A2D22"/>
+    <path d="M370 70 l60 0" stroke="#FFFFFF" stroke-width="10" opacity=".25"/>
+  </g>
+  <circle cx="452" cy="148" r="86" fill="none" stroke="#1E2D27" stroke-width="10"/>
+  <circle cx="452" cy="148" r="80" fill="none" stroke="#2D7D64" stroke-width="5"/>
+  <g transform="translate(372 18)"><rect width="160" height="30" rx="15" fill="#2D7D64"/><text x="80" y="20" fill="#fff" font-family="Segoe UI, Arial" font-size="14" font-weight="700" text-anchor="middle">Dermatoscopia</text></g>
+</svg>

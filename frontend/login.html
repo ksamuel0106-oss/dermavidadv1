@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso al Sistema | DermaVida</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="login-page">
+
+    <!-- Panel visual -->
+    <section class="login-visual">
+        <a class="brand" href="index.html"><img src="img/logo.svg" alt="">Clínica Dermatológica DermaVida</a>
+        <div>
+            <h2>Gestión clínica integral para el cuidado de la piel.</h2>
+            <p>Agenda, expediente dermatológico, facturación y reportes en un solo lugar, con acceso seguro para cada miembro del equipo.</p>
+            <img class="ilustracion" src="img/piel.svg" alt="Ilustración de las capas de la piel y dermatoscopia">
+            <ul>
+                <li>🔒 Acceso protegido con JWT y roles</li>
+                <li>📅 Agenda sin choques de horario</li>
+                <li>🧾 Facturas y recetas en PDF</li>
+            </ul>
+        </div>
+        <small style="color:#B9CFC4">© 2026 DermaVida • La Vega, República Dominicana</small>
+    </section>
+
+    <!-- Formulario (LoginWindow del Consultorio) -->
+    <section class="login-side">
+        <div class="login-panel">
+            <img class="logo" src="img/logo.svg" alt="Logo DermaVida">
+            <h1>Clínica DermaVida</h1>
+            <div class="sub">Sistema de Gestión y Expediente Dermatológico</div>
+
+            <div id="mensaje"></div>
+
+            <form id="formLogin" novalidate>
+                <div class="field">
+                    <label for="correo">Usuario / Correo Electrónico:</label>
+                    <input class="input" type="email" id="correo" name="correo" placeholder="usuario@dermavida.do" autocomplete="username" required>
+                </div>
+                <div class="field">
+                    <label for="password">Contraseña de Acceso:</label>
+                    <div class="pwd-wrap">
+                        <input class="input" type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+                        <button type="button" id="verClave" title="Mostrar/ocultar contraseña">👁️</button>
+                    </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin:4px 0 16px">
+                    <label class="check"><input type="checkbox" id="recordar" checked> Recordar usuario</label>
+                    <a href="index.html" class="small">← Volver al sitio</a>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit" id="btnEntrar" style="padding:12px">🔑 Iniciar Sesión</button>
+            </form>
+
+            <div class="demo">
+                <b>Usuarios de prueba:</b><br>
+                <button type="button" data-u="admin@dermavida.do" data-p="Admin123*">Administrador</button> •
+                <button type="button" data-u="recepcion@dermavida.do" data-p="Recepcion123*">Recepción</button> •
+                <button type="button" data-u="lmendez@dermavida.do" data-p="Doctor123*">Dermatóloga</button>
+            </div>
+            <div class="version">Versión 1.0 • Pastel Green Edition</div>
+        </div>
+        <div class="copy">© 2026 Clínica Dermatológica DermaVida • Todos los derechos reservados</div>
+    </section>
+</div>
+
+<script src="js/api.js"></script>
+<script>
+    const form = document.getElementById("formLogin");
+    const msg = document.getElementById("mensaje");
+    const correo = document.getElementById("correo");
+    const clave = document.getElementById("password");
+
+    if (Sesion.vigente()) location.replace("app/dashboard.html");
+    if (new URLSearchParams(location.search).has("expirada")) {
+        msg.innerHTML = '<div class="alert alert-error">Su sesión finalizó. Inicie sesión nuevamente.</div>';
+    }
+    correo.value = localStorage.getItem("dv_recordado") || "";
+
+    document.getElementById("verClave").onclick = () => {
+        clave.type = clave.type === "password" ? "text" : "password";
+    };
+
+    document.querySelectorAll(".demo [data-u]").forEach((b) => b.onclick = () => {
+        correo.value = b.dataset.u;
+        clave.value = b.dataset.p;
+    });
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        msg.innerHTML = "";
+        if (!correo.value.trim() || !clave.value) {
+            msg.innerHTML = '<div class="alert alert-error">Por favor ingrese su usuario y contraseña para continuar.</div>';
+            return;
+        }
+        const recordar = document.getElementById("recordar").checked;
+        try {
+            const r = await conCarga(document.getElementById("btnEntrar"),
+                () => api("/auth/login", { method: "POST", body: { correo: correo.value, password: clave.value } }));
+            Sesion.guardar(r.token, r.usuario, recordar);
+            if (recordar) localStorage.setItem("dv_recordado", correo.value.trim());
+            else localStorage.removeItem("dv_recordado");
+            msg.innerHTML = `<div class="alert alert-ok">${esc(r.mensaje)}</div>`;
+            setTimeout(() => location.href = "app/dashboard.html", 400);
+        } catch (err) {
+            msg.innerHTML = `<div class="alert alert-error">${esc(err.message)}</div>`;
+        }
+    });
+</script>
+</body>
+</html>

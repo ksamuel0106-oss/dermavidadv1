@@ -1,0 +1,31 @@
+# Despliegue en Render.com (Blueprint): crea la web y la base PostgreSQL juntas.
+# Render -> New -> Blueprint -> seleccionar este repositorio -> Apply.
+# Al primer arranque el servidor crea las tablas y carga los datos de prueba solo.
+
+databases:
+  - name: dermavida-db
+    databaseName: clinica_dermatologica
+    user: dermavida
+    plan: free
+    region: virginia
+
+services:
+  - type: web
+    name: dermavida
+    runtime: node
+    plan: free
+    region: virginia
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dermavida-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES
+        value: 8h
+      - key: TZ
+        value: America/Santo_Domingo

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes | DermaVida</title>
+    <link rel="icon" href="../img/logo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body data-pagina="reportes" data-titulo="Reportes" data-roles="Administrador,Recepción">
+<main>
+    <div class="page-head">
+        <div><h2>📈 Reportes</h2><p>Seleccione un reporte, ajuste el período y descárguelo en PDF o Excel.</p></div>
+    </div>
+    <div class="report-cards" id="tiposReporte"></div>
+    <div class="card">
+        <div class="filters" style="margin-bottom:16px">
+            <div class="field" id="campoDesde"><label for="rDesde">Desde</label><input class="input" type="date" id="rDesde"></div>
+            <div class="field" id="campoHasta"><label for="rHasta">Hasta</label><input class="input" type="date" id="rHasta"></div>
+            <div class="field hidden" id="campoEstado"><label for="rEstado">Estado</label><select class="input" id="rEstado"><option value="">Todos</option><option>Pendiente</option><option>Confirmada</option><option>Atendida</option><option>Cancelada</option></select></div>
+            <div class="field"><label>&nbsp;</label><button class="btn btn-light" id="btnVista">👁️ Vista previa</button></div>
+            <div class="toolbar" style="margin-left:auto">
+                <button class="btn btn-danger" id="btnPDF">📄 Descargar PDF</button>
+                <button class="btn btn-primary" id="btnExcel">📊 Descargar Excel</button>
+            </div>
+        </div>
+        <h3 id="tituloReporte" style="color:var(--primary)"></h3>
+        <p class="muted small" id="subReporte"></p>
+        <div class="resumen-grid" id="resumenReporte"></div>
+        <div class="table-wrap"><table class="table responsive" id="tablaReporte"><thead></thead><tbody></tbody><tfoot></tfoot></table></div>
+    </div>
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/reportes.js"></script>
+</body>
+</html>
